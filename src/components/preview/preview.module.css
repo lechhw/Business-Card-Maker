@@ -1,0 +1,9 @@
+ul {
+  padding-left: 0;
+}
+
+.preview {
+  flex: 1 1 50%;
+  padding: 1.5rem 1rem;
+  overflow-y: auto;
+}
