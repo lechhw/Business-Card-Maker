@@ -1,0 +1,20 @@
+@value makerWhite,makerLightGrey from "../../common/colors.css";
+
+.add_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24rem;
+  padding: 3.5rem 0;
+  margin: 0 auto;
+  background-color: makerWhite;
+  border-radius: 0.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  cursor: pointer;
+  transition: transform 300ms ease-in;
+}
+
+.add_form:hover {
+  opacity: 0.8;
+}
