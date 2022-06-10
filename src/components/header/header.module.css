@@ -1,4 +1,4 @@
-@value makerBlack,makerWhite,makerLightGrey from "../../common/colors.css";
+@value makerBlack,makerWhite,makerGrey from "../../common/colors.css";
 
 .header {
   display: flex;
@@ -18,7 +18,7 @@
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
-  color: makerLightGrey;
+  color: makerGrey;
 }
 
 .button:hover {

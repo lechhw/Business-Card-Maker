@@ -1,4 +1,4 @@
-@value makerBlack,makerWhite,makerLightGrey,makerBlue from "../../common/colors.css";
+@value makerBlack,makerWhite,makerGrey,makerBlue from "../../common/colors.css";
 
 .card {
   width: 100%;
@@ -60,7 +60,7 @@
 
 .title {
   font-size: 0.9rem;
-  color: makerLightGrey;
+  color: makerGrey;
 }
 
 .detail_info {

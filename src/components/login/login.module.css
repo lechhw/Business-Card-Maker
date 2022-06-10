@@ -1,4 +1,4 @@
-@value makerBlack,makerWhite,makerLightGrey,makerBlue from "../../common/colors.css";
+@value makerBlack,makerWhite,makerGrey,makerBlue from "../../common/colors.css";
 .login {
   position: fixed;
   top: 50%;
@@ -80,5 +80,5 @@
 }
 
 .button.non_members {
-  color: makerLightGrey;
+  color: makerGrey;
 }

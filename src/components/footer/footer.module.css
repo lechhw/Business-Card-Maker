@@ -1,9 +1,9 @@
-@value makerWhite,makerLightGrey from "../../common/colors.css";
+@value makerWhite,makerGrey from "../../common/colors.css";
 
 .footer {
   padding: 1rem 1.5rem;
   font-size: 0.9rem;
   font-style: italic;
-  color: makerLightGrey;
+  color: makerGrey;
   background-color: makerWhite;
 }
