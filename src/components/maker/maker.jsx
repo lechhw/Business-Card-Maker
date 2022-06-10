@@ -70,7 +70,7 @@ const Maker = ({ authService }) => {
         <Header onLogOut={onLogOut} />
       </div>
       <div className={styles.container}>
-        <Editor />
+        <Editor cards={cards} />
         <Preview cards={cards} />
       </div>
       <div className={styles.footer}>
