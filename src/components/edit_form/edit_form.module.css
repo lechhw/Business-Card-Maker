@@ -1,4 +1,4 @@
-@value makerBlack,makerWhite,makerLightGrey,makerGrey,makerLightBlue from "../../common/colors.css";
+@value makerWhite,makerLightGrey,makerRed from "../../common/colors.css";
 
 .form {
   width: 24rem;
@@ -12,6 +12,7 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
+
 .input,
 .select {
   border: 0;
@@ -26,6 +27,7 @@
   padding: 0.6rem;
   background-color: #eeeeee;
 }
+
 .wrapper {
   display: flex;
   width: 20rem;
@@ -40,9 +42,27 @@
 
 .select {
   padding: 0.5rem;
+  margin-right: 0.2rem;
   background-color: makerLightGrey;
+  border-radius: 0.2rem;
 }
 
 .select:focus {
   outline: none;
+}
+
+.button {
+  border: 0;
+  background: 0;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: makerWhite;
+  background-color: makerRed;
+  border-radius: 0.2rem;
+}
+
+.button:hover {
+  opacity: 0.8;
 }
