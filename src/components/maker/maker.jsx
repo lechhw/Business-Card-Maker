@@ -34,18 +34,23 @@ const Maker = ({ authService }) => {
       theme: 'dark',
       fileURL: '',
     },
-    3: {
-      id: '2',
-      name: '이창환',
-      title: 'Frontend',
-      company: 'ABC company',
-      address: '서울시 **구 **대로 123',
-      number: '010-1234-5678',
-      email: 'changhwanlee94@gmail.com',
-      theme: 'dark',
-      fileURL: '',
-    },
   });
+
+  const addOrUpdateCard = (card) => {
+    setCards((cards) => {
+      const updated = { ...cards };
+      updated[card.id] = card;
+      return updated;
+    });
+  };
+
+  const deleteCard = (card) => {
+    setCards((cards) => {
+      const updated = { ...cards };
+      delete updated[card.id];
+      return updated;
+    });
+  };
 
   // onLogout 함수에서 바로 로그인화면으로 넘겨주지않고
   // authService 와 history의 값이 업데이트될때마다 onAuthChang함수를 이용하여
@@ -70,7 +75,12 @@ const Maker = ({ authService }) => {
         <Header onLogOut={onLogOut} />
       </div>
       <div className={styles.container}>
-        <Editor cards={cards} />
+        <Editor
+          cards={cards}
+          updateCard={addOrUpdateCard}
+          addCard={addOrUpdateCard}
+          deleteCard={deleteCard}
+        />
         <Preview cards={cards} />
       </div>
       <div className={styles.footer}>
