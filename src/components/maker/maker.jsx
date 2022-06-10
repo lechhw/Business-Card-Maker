@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import Footer from '../footer/footer';
 import Header from '../header/header';
 import styles from './maker.module.css';
 
@@ -27,8 +28,14 @@ const Maker = ({ authService }) => {
   };
 
   return (
-    <section>
-      <Header onLogOut={onLogOut} />
+    <section className={styles.maker}>
+      <div className={styles.header}>
+        <Header onLogOut={onLogOut} />
+      </div>
+      <div className={styles.container}></div>
+      <div className={styles.footer}>
+        <Footer />
+      </div>
     </section>
   );
 };

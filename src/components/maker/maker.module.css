@@ -1,0 +1,13 @@
+@value makerLightBlue from "../../common/colors.css";
+
+.maker {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex-basis: 100%;
+  background-color: makerLightBlue;
+}
