@@ -1,4 +1,5 @@
 @value makerWhite,makerLightGrey from "../../common/colors.css";
+@value Mobile from "../../common/size.css";
 
 .add_form {
   display: flex;
@@ -15,6 +16,15 @@
   transition: transform 300ms ease-in;
 }
 
-.add_form:hover {
+.add_form:hover,
+.add_form:active {
   opacity: 0.8;
+}
+
+/* responsive : Mobile */
+@media screen and (max-width: Mobile) {
+  .add_form {
+    width: 100%;
+    padding: 2.5rem 0;
+  }
 }

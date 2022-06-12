@@ -1,4 +1,5 @@
 @value makerBlack,makerWhite,makerGrey,makerBlue from "../../common/colors.css";
+@value Mobile from "../../common/size.css";
 
 .card {
   width: 100%;
@@ -17,6 +18,7 @@
   transform: scale(1.02);
 }
 
+/* card theme */
 .card.light {
   color: makerBlack;
   background-color: makerWhite;
@@ -27,6 +29,7 @@
   background-color: makerBlack;
 }
 
+/* card info */
 .info {
   display: flex;
   flex-direction: column;
@@ -79,4 +82,50 @@
 
 .number {
   margin-bottom: 0.3rem;
+}
+
+/* responsive : Mobile */
+@media screen and (max-width: Mobile) {
+  .card {
+    padding: 1rem 0.8rem 1rem 0.6rem;
+  }
+
+  .info {
+    margin-right: 1.3rem;
+  }
+
+  .profile {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+
+  .name {
+    font-size: 1.1rem;
+  }
+
+  .title {
+    font-size: 0.8rem;
+  }
+
+  .detail_info {
+    padding-top: 1.6rem;
+  }
+
+  .company {
+    font-size: 1.1rem;
+  }
+
+  .address {
+    font-size: 0.7rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .number {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .email {
+    font-size: 0.8rem;
+  }
 }

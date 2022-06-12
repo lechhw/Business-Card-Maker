@@ -1,4 +1,6 @@
 @value makerBlack,makerWhite,makerGrey,makerBlue from "../../common/colors.css";
+@value Mobile from "../../common/size.css";
+
 .login {
   position: fixed;
   top: 50%;
@@ -71,6 +73,10 @@
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
+.item:active {
+  opacity: 0.8;
+}
+
 .button {
   border: 0;
   background: 0;
@@ -81,4 +87,35 @@
 
 .button.non_members {
   color: makerGrey;
+}
+
+/* responsive : Mobile */
+@media screen and (max-width: Mobile) {
+  .login {
+    padding-top: 1.5rem;
+  }
+
+  .header {
+    margin-bottom: 1.8rem;
+  }
+
+  .image {
+    width: 3rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .greeting {
+    font-size: 0.9rem;
+  }
+
+  .item {
+    width: 60%;
+  }
+
+  .button {
+    font-size: 1.1rem;
+  }
 }

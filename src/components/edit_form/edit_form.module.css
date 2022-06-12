@@ -1,11 +1,12 @@
 @value makerWhite,makerLightGrey,makerRed from "../../common/colors.css";
+@value Mobile from "../../common/size.css";
 
 .form {
   width: 24rem;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   padding: 1rem;
   background-color: makerWhite;
   border-radius: 0.5rem;
@@ -63,6 +64,24 @@
   border-radius: 0.2rem;
 }
 
-.button:hover {
+.button:hover,
+.button:active {
   opacity: 0.8;
+}
+
+/* responsive : Mobile */
+@media screen and (max-width: Mobile) {
+  .form {
+    width: 100%;
+    padding: 0.6rem;
+  }
+
+  .input {
+    width: 98%;
+    padding: 0.5rem;
+  }
+
+  .wrapper {
+    width: 98%;
+  }
 }
