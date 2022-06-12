@@ -1,4 +1,4 @@
-@value makerWhite,makerLightGrey,makerRed from "../../common/colors.css";
+@value makerWhite,makerLightGrey,makerPink from "../../common/colors.css";
 @value Mobile from "../../common/size.css";
 
 .form {
@@ -44,6 +44,7 @@
 .select {
   padding: 0.5rem;
   margin-right: 0.2rem;
+  margin-left: 0.2rem;
   background-color: makerLightGrey;
   border-radius: 0.2rem;
 }
@@ -60,7 +61,7 @@
   font-size: 1rem;
   font-weight: 500;
   color: makerWhite;
-  background-color: makerRed;
+  background-color: makerPink;
   border-radius: 0.2rem;
 }
 
