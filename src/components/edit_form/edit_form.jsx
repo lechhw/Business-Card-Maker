@@ -1,9 +1,18 @@
 import React, { useRef } from 'react';
-import ImageInput from '../image_input/image_input';
 import styles from './edit_form.module.css';
 
-const EditForm = ({ card, updateCard, deleteCard }) => {
-  const { name, title, company, address, number, email, theme, fileURL } = card;
+const EditForm = ({ FileInput, card, updateCard, deleteCard }) => {
+  const {
+    name,
+    title,
+    company,
+    address,
+    number,
+    email,
+    theme,
+    fileName,
+    fileURL,
+  } = card;
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -21,11 +30,20 @@ const EditForm = ({ card, updateCard, deleteCard }) => {
     });
   };
 
+  const onFileChange = (file) => {
+    updateCard({
+      ...card,
+      fileName: 'Uploaded',
+      fileURL: file.url,
+    });
+  };
+
   return (
     <form className={styles.form}>
       <input
         className={styles.input}
         type="text"
+        autocomplete="off"
         name="name"
         value={name}
         placeholder="Name"
@@ -34,6 +52,7 @@ const EditForm = ({ card, updateCard, deleteCard }) => {
       <input
         className={styles.input}
         type="text"
+        autocomplete="off"
         name="title"
         value={title}
         placeholder="Title"
@@ -42,6 +61,7 @@ const EditForm = ({ card, updateCard, deleteCard }) => {
       <input
         className={styles.input}
         type="text"
+        autocomplete="off"
         name="company"
         value={company}
         placeholder="Company"
@@ -50,6 +70,7 @@ const EditForm = ({ card, updateCard, deleteCard }) => {
       <input
         className={styles.input}
         type="text"
+        autocomplete="off"
         name="address"
         value={address}
         placeholder="Address"
@@ -58,6 +79,7 @@ const EditForm = ({ card, updateCard, deleteCard }) => {
       <input
         className={styles.input}
         type="text"
+        autocomplete="off"
         name="number"
         value={number}
         placeholder="Number"
@@ -66,6 +88,7 @@ const EditForm = ({ card, updateCard, deleteCard }) => {
       <input
         className={styles.input}
         type="email"
+        autocomplete="off"
         name="email"
         value={email}
         placeholder="Email"
@@ -73,7 +96,7 @@ const EditForm = ({ card, updateCard, deleteCard }) => {
       />
       <div className={styles.wrapper}>
         <div className={styles.image_input}>
-          <ImageInput />
+          <FileInput onFileChange={onFileChange} name={fileName} />
         </div>
         <select
           className={styles.select}

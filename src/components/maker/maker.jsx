@@ -6,7 +6,7 @@ import Header from '../header/header';
 import Preview from '../preview/preview';
 import styles from './maker.module.css';
 
-const Maker = ({ authService }) => {
+const Maker = ({ FileInput, authService }) => {
   const history = useHistory();
   // historyState 는 login 컴포넌트에서 넘어왔다면 user 정보가 있을 것이고, 다른 컴포넌트에서 넘어왔다면 값이 없을 것이다.
   const historyState = history.location.state;
@@ -21,6 +21,7 @@ const Maker = ({ authService }) => {
       number: '010-1234-5678',
       email: 'changhwanlee94@gmail.com',
       theme: 'light',
+      fileName: '',
       fileURL: '',
     },
     2: {
@@ -32,6 +33,7 @@ const Maker = ({ authService }) => {
       number: '010-1234-5678',
       email: 'changhwanlee94@gmail.com',
       theme: 'dark',
+      fileName: '',
       fileURL: '',
     },
   });
@@ -76,6 +78,7 @@ const Maker = ({ authService }) => {
       </div>
       <div className={styles.container}>
         <Editor
+          FileInput={FileInput}
           cards={cards}
           updateCard={addOrUpdateCard}
           addCard={addOrUpdateCard}
