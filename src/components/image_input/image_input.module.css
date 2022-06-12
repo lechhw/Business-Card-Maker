@@ -1,0 +1,46 @@
+@value makerYellow,makerIvory,makerLightGrey from "../../common/colors.css";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.input {
+  display: none;
+}
+
+.button {
+  border: 0;
+  background: 0;
+  cursor: pointer;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 0.2rem;
+  background-color: #f7f5f2;
+}
+
+.button.upload {
+  background-color: makerYellow;
+}
+
+.loading {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid makerLightGrey;
+  border-top: 3px solid makerYellow;
+  border-radius: 50%;
+  animation-name: loading;
+  animation-duration: 2.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loading {
+  100% {
+    transform: rotate(360deg);
+  }
+}
