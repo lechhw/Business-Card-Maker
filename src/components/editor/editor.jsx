@@ -5,6 +5,7 @@ import styles from './editor.module.css';
 
 const Editor = ({ cards, updateCard, addCard, deleteCard }) => (
   <section className={styles.editor}>
+    <div className={styles.badge}>Editor</div>
     <ul>
       {Object.keys(cards).map((key) => (
         <EditForm
