@@ -1,4 +1,4 @@
-@value makerWhite,makerGrey from "../../common/colors.css";
+@value makerWhite,makerGrey,makerLightGrey from "../../common/colors.css";
 @value Mobile from "../../common/size.css";
 
 .footer {
@@ -7,6 +7,7 @@
   font-style: italic;
   color: makerGrey;
   background-color: makerWhite;
+  border-top: 1px solid makerLightGrey;
 }
 
 /* responsive : Mobile */

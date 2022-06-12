@@ -1,4 +1,4 @@
-@value makerBlack,makerWhite,makerGrey from "../../common/colors.css";
+@value makerBlack,makerWhite,makerGrey,makerLightGrey from "../../common/colors.css";
 @value Mobile from "../../common/size.css";
 
 .header {
@@ -6,6 +6,7 @@
   justify-content: space-between;
   padding: 1rem 1.5rem;
   background-color: makerWhite;
+  border-bottom: 1px solid makerLightGrey;
 }
 
 .title {
