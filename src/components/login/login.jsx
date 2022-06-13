@@ -22,7 +22,7 @@ const Login = ({ authService }) => {
       .loginAnonymously()
       .then(
         alert(
-          "Non-members login doesn't save the changed data. So, We recommend you log in with Google or Github."
+          "⚠️ Non-members login doesn't save the changed data. So, We recommend you log in with Google or Github."
         )
       )
       .then(goToMaker());
