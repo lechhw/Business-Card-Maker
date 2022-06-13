@@ -43,7 +43,7 @@ const EditForm = ({ FileInput, card, updateCard, deleteCard }) => {
       <input
         className={styles.input}
         type="text"
-        autocomplete="off"
+        autoComplete="off"
         name="name"
         value={name}
         placeholder="Name"
@@ -52,7 +52,7 @@ const EditForm = ({ FileInput, card, updateCard, deleteCard }) => {
       <input
         className={styles.input}
         type="text"
-        autocomplete="off"
+        autoComplete="off"
         name="title"
         value={title}
         placeholder="Title"
@@ -61,7 +61,7 @@ const EditForm = ({ FileInput, card, updateCard, deleteCard }) => {
       <input
         className={styles.input}
         type="text"
-        autocomplete="off"
+        autoComplete="off"
         name="company"
         value={company}
         placeholder="Company"
@@ -70,7 +70,7 @@ const EditForm = ({ FileInput, card, updateCard, deleteCard }) => {
       <input
         className={styles.input}
         type="text"
-        autocomplete="off"
+        autoComplete="off"
         name="address"
         value={address}
         placeholder="Address"
@@ -79,7 +79,7 @@ const EditForm = ({ FileInput, card, updateCard, deleteCard }) => {
       <input
         className={styles.input}
         type="text"
-        autocomplete="off"
+        autoComplete="off"
         name="number"
         value={number}
         placeholder="Number"
@@ -88,7 +88,7 @@ const EditForm = ({ FileInput, card, updateCard, deleteCard }) => {
       <input
         className={styles.input}
         type="email"
-        autocomplete="off"
+        autoComplete="off"
         name="email"
         value={email}
         placeholder="Email"
