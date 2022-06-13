@@ -1,4 +1,6 @@
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -13,5 +15,7 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 //전체적인 firebaseApp을 export하기 보다는 필요한 것만 export해서 각각의 서비스에서 필요한 것만을 import해 갈 수 있도록 만들었다.
 export const firebaseAuth = firebaseApp.auth();
+export const firebaseDatabase = firebaseApp.database();
+
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
 export const gitHubProvider = new firebase.auth.GithubAuthProvider();
