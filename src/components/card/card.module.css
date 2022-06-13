@@ -1,7 +1,8 @@
-@value makerBlack,makerWhite,makerGrey,makerBlue from "../../common/colors.css";
+@value makerBlack,makerWhite,makerGrey,makerBlue,makerYellow from "../../common/colors.css";
 @value Mobile from "../../common/size.css";
 
 .card {
+  position: relative;
   width: 100%;
   max-width: 28rem;
   margin: 0 auto;
@@ -27,6 +28,31 @@
 .card.dark {
   color: makerWhite;
   background-color: makerBlack;
+}
+
+/* save button */
+.save {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border: 0;
+  background: 0;
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: border-color 200ms ease-in;
+}
+
+.save:hover {
+  border-color: makerYellow;
+}
+.save img {
+  width: 1.1rem;
 }
 
 /* card info */
