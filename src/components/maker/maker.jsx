@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import Editor from '../editor/editor';
 import Footer from '../footer/footer';
@@ -58,9 +58,9 @@ const Maker = ({ FileInput, authService, cardDatabase }) => {
     cardDatabase.removeCard(userId, card);
   };
 
-  const onLogOut = () => {
+  const onLogOut = useCallback(() => {
     authService.logout();
-  };
+  }, [authService]);
 
   return (
     <section className={styles.maker}>

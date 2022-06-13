@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React, { memo } from 'react';
 import styles from './add_form.module.css';
 
-const AddForm = ({ addCard }) => {
+const AddForm = memo(({ addCard }) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -21,9 +21,9 @@ const AddForm = ({ addCard }) => {
 
   return (
     <div className={styles.add_form} onClick={onSubmit}>
-      <img src="./images/plus.png" alt="" />
+      <img src="./images/plus.png" alt="add" />
     </div>
   );
-};
+});
 
 export default AddForm;

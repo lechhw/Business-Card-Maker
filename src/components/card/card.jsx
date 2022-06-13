@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './card.module.css';
 
 const DEFAULT_IMAGE = './images/default_profile.png';
 
-const Card = ({ card }) => {
+const Card = memo(({ card }) => {
   const { name, title, company, address, number, email, theme, fileURL } = card;
   const url = fileURL || DEFAULT_IMAGE;
 
@@ -26,7 +26,7 @@ const Card = ({ card }) => {
       </article>
     </li>
   );
-};
+});
 
 function getTheme(theme) {
   switch (theme) {
