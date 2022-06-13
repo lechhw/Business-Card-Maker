@@ -8,7 +8,7 @@ Firebase 의 Authentication 서비스를 이용하여 소셜로그인 기능을 
 그리고 Cloudinary 를 이용하여 사용자가 이미지를 서버에 업로드 할 수 있게 하여 언제 어디서든 해당 이미지를 불러올 수 있습니다.<br>
 또한 외부라이브러리(dom-to-image, fileSaver) 를 사용하여 작성한 카드를 png 파일로 저장할 수 있는 기능을 구현하였습니다.
 
----
+<br>
 
 ## Live Demo : [Business Card Maker](https://lechhw-business-card-maker.netlify.app)
 
@@ -23,6 +23,8 @@ Firebase 의 Authentication 서비스를 이용하여 소셜로그인 기능을 
 - [x] React Router
 - [x] PostCSS
 - [x] Firebase
+  - Authentication
+  - Realtime Database
 - [x] Cloudinary
 - [x] Deploy: Netlify
 
@@ -56,30 +58,9 @@ Firebase 의 Authentication 서비스를 이용하여 소셜로그인 기능을 
 
 # Solution
 
--Firebase 의 모든 서비스를 import 하지 않고, 프로젝트내에서 필요한 서비스만 따로 정의 후에 export 하여 사용하였습니다.
-
-```js
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/database';
-
-const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_DATABASE_URL,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-};
-
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-export const firebaseAuth = firebaseApp.auth();
-export const firebaseDatabase = firebaseApp.database();
-export const googleProvider = new firebase.auth.GoogleAuthProvider();
-export const gitHubProvider = new firebase.auth.GithubAuthProvider();
-```
-
 <br>
 
-- Database: syncCard 함수는 데이터베이스의 해당 ref(경로) 에 리스너를 등록하여 변경사항이 있다면 등록된 콜백 함수를 호출합니다. 그리고 추후에 리스너를 제거해주는 off() 함수를 리턴해줍니다. <br>
+- Database: syncCard 함수는 데이터베이스의 해당 ref(경로) 에 리스너를 등록하여 변경사항이 있다면 등록된 콜백 함수를 호출합니다. 그리고 추후에 리스너를 제거해주는 off() 함수를 리턴해줍니다.
   이는 maker 컴포넌트의 useEffect()안에서 콜백함수형태로 리턴을 해주어 언마운트가 되면 off() 함수가 실행됩니다.
 
 ```js
@@ -117,7 +98,7 @@ useEffect(() => {
 
 <br>
 
-- Image uploader: file 을 인자로 받아와 서버에 업로드 후 해당 이미지 url 을 리턴해줍니다.
+- Image uploader(Cloudinary): file 을 인자로 받아와 서버에 업로드 후 해당 이미지 url 을 리턴해줍니다.
 
 ```js
 class UploadImage {
@@ -182,4 +163,43 @@ const Card = memo(({ card }) => {
 });
 
 export default Card;
+```
+
+<br>
+
+- Search: search componenet 의 input value를 setSearch()에 저장하고, search 에 데이터가 있으면 card 의 name 과 비교하여 해당하는 card 만 리턴해주고 데이터가 없으면 card 전체를 리턴합니다.
+```js
+import React, { useState } from 'react';
+import Card from '../card/card';
+import Search from '../search/search';
+import styles from './preview.module.css';
+
+const Preview = ({ cards }) => {
+  const [search, setSearch] = useState('');
+  
+  const onChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  return (
+    <section className={styles.preview}>
+      <div className={styles.search}>
+        <Search onChange={onChange} />
+      </div>
+
+      <ul>
+        {!search &&
+          Object.keys(cards).map((key) => <Card key={key} card={cards[key]} />)}
+
+        {search &&
+          Object.keys(cards)
+            .filter((key) => cards[key].name.toLowerCase().includes(search))
+            .map((key) => <Card key={key} card={cards[key]} />)}
+      </ul>
+    </section>
+  );
+};
+
+export default Preview;
+
 ```
