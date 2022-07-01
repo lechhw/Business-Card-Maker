@@ -58,10 +58,9 @@ Firebase 의 Authentication 서비스를 이용하여 소셜로그인 기능을 
 
 # Solution
 
-<br>
-
-- Database: syncCard 함수는 데이터베이스의 해당 ref(경로) 에 리스너를 등록하여 변경사항이 있다면 등록된 콜백 함수를 호출합니다. 그리고 추후에 리스너를 제거해주는 off() 함수를 리턴해줍니다.
-  이는 maker 컴포넌트의 useEffect()안에서 콜백함수형태로 리턴을 해주어 언마운트가 되면 off() 함수가 실행됩니다.
+## ✅ Database
+`syncCard()` 함수는 데이터베이스의 해당 ref(경로) 에 리스너를 등록하여 변경사항이 있다면 등록된 콜백 함수를 호출합니다. 그리고 추후에 리스너를 제거해주는 `off()` 함수를 리턴해줍니다.
+이는 maker 컴포넌트의 `useEffect()` 안에서 콜백함수형태로 리턴을 해주어 언마운트가 되면 `off()` 함수가 실행됩니다.
 
 ```js
 // card_database.js
@@ -98,7 +97,8 @@ useEffect(() => {
 
 <br>
 
-- Image uploader(Cloudinary): file 을 인자로 받아와 서버에 업로드 후 해당 이미지 url 을 리턴해줍니다.
+## ✅ Image uploader(Cloudinary) 
+file 을 인자로 받아와 서버에 업로드 후 해당 이미지 url 을 리턴해줍니다.
 
 ```js
 class UploadImage {
@@ -124,8 +124,8 @@ export default UploadImage;
 
 <br>
 
-- Save image(dom-to-image, fileSaver): toBlob 함수를 통해 이벤트가 일어날 타겟을(card) 선택하고
-  saveAs 함수로 해당 타겟을 png 파일로 저장시켜 줍니다.
+## ✅ Save image(dom-to-image, fileSaver) 
+`toBlob()` 함수를 통해 이벤트가 일어날 타겟을(card) 선택하고 `saveAs()` 함수로 해당 타겟을 png 파일로 저장시켜 줍니다.
 
 ```js
 import React, { memo, useRef } from 'react';
@@ -167,7 +167,9 @@ export default Card;
 
 <br>
 
-- Search: search componenet 의 input value를 setSearch()에 저장하고, search 에 데이터가 있으면 card 의 name 과 비교하여 해당하는 card 만 리턴해주고 데이터가 없으면 card 전체를 리턴합니다.
+## ✅ Search
+search componenet 의 input value를 `setSearch()` 에 저장하고, search 에 데이터가 들어오면 card 의 name 과 비교하여 해당하는 card 를 리턴해주고 데이터가 없으면 card 전체를 리턴합니다.
+
 ```js
 import React, { useState } from 'react';
 import Card from '../card/card';
