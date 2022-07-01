@@ -50,7 +50,7 @@ Firebase 의 Authentication 서비스를 이용하여 소셜로그인 기능을 
 
 <br>
 
-## 반응형 UI
+## Responsive Web
 
 <img  src="https://user-images.githubusercontent.com/99241230/173328278-be6daea5-5a5e-42d1-829a-e0db13f635f0.gif">
 
